@@ -6,20 +6,26 @@ using namespace std;
 
 // biggest = 10
 
+// sort_elements function
 void sort_elements(int arr[], int size) {
-  for (int i = 0; i < size - 1; i++) {
-    int max_idx = i;
+  // Outer loop
+  for (int i = 0; i < size; i++) {
+    // Inner loop
     for (int j = i + 1; j < size; j++) {
-      if (arr[j] > arr[max_idx]) {
-        max_idx = j;
+      // If condition
+      if (arr[i] < arr[j]) {
+        // Swap elements
+        // Store the value at index j in temp
+        int temp = arr[j];
+        // Store the value at index i at index j
+        arr[j] = arr[i];
+        // Store the value of temp at index i
+        arr[i] = temp;
       }
     }
-    // Swap arr[i] and arr[max_idx]
-    int temp = arr[i];
-    arr[i] = arr[max_idx];
-    arr[max_idx] = temp;
   }
 }
+
 
 // Function to print values of an array
 void print_array(int arr[], int size) {
